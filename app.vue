@@ -1,0 +1,496 @@
+<template>
+  <div>
+  
+
+
+<div class="it-header-wrapper">
+    <div class="it-header-slim-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="it-header-slim-wrapper-content">
+              <a class="d-none d-lg-block navbar-brand" href="#">Ente appartenenza</a>
+              <div class="nav-mobile">
+                <nav aria-label="Navigazione accessoria">
+                  <a class="it-opener d-lg-none" data-bs-toggle="collapse" href="#menu1a" role="button"
+                    aria-expanded="false" aria-controls="menu4">
+                    <span>Ente appartenenza</span>
+                    <svg class="icon" aria-hidden="true">
+                      
+                    </svg>
+                  </a>
+                  <div class="link-list-wrapper collapse" id="menu1a">
+                    <ul class="link-list">
+                      <li><a class="dropdown-item list-item" href="#">Link 1</a></li>
+                      <li><a class="list-item active" href="#" aria-current="page">Link 2 (Attivo)</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+              <div class="it-header-slim-right-zone">
+                <div class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span class="visually-hidden">Selezione lingua: lingua selezionata</span>
+                    <span>ITA</span>
+                    <svg class="icon d-none d-lg-block">
+                      
+                    </svg>
+                  </a>
+                  <div class="dropdown-menu">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="link-list-wrapper">
+                          <ul class="link-list">
+                            <li><a class="dropdown-item list-item" href="#"><span>ITA <span
+                                    class="visually-hidden">selezionata</span></span></a></li>
+                            <li><a class="dropdown-item list-item" href="#"><span>ENG</span></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="it-access-top-wrapper">
+                  <a class="btn btn-primary btn-sm" href="#">Accedi</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="it-nav-wrapper">
+      <div class="it-header-center-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="it-header-center-content-wrapper">
+                <div class="it-brand-wrapper">
+                  <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                     
+                    </svg>
+                    <div class="it-brand-text">
+                      <div class="it-brand-title">Nome dell'Istituzione</div>
+                      <div class="it-brand-tagline d-none d-md-block">Tag line dell'Istituzione</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="it-right-zone">
+                  
+                  <div class="it-search-wrapper">
+                    <span class="d-none d-md-block">Cerca</span>
+                    <a class="search-link rounded-icon" aria-label="Cerca nel sito" href="#">
+                      <svg class="icon">
+                        
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="it-header-navbar-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!--start nav-->
+              <nav class="navbar navbar-expand-lg has-megamenu" aria-label="Navigazione principale">
+                <button class="custom-navbar-toggler" type="button" aria-controls="nav0" aria-expanded="false" aria-label="Mostra/Nascondi la navigazione" data-bs-toggle="navbarcollapsible" data-bs-target="#nav0">
+                  <svg class="icon bg-override"></svg>
+                </button>
+                <div class="navbar-collapsable" id="nav0" style="display: none;">
+                  <div class="overlay" style="display: none;"></div>
+                  <div class="close-div">
+                    <button class="btn close-menu" type="button">
+                      <span class="visually-hidden">Nascondi la navigazione</span>
+                      <svg class="icon"></svg>
+                    </button>
+                  </div>
+                  <div class="menu-wrapper">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active"><a class="nav-link active" href="#" aria-current="page"><span>Link 1 (attivo)</span></a></li>
+                      <li class="nav-item"><a class="nav-link disabled" href="#" aria-disabled="true"><span>Link 2 (disabilitato)</span></a></li>
+                      <li class="nav-item"><a class="nav-link" href="#"><span>Link 3</span></a></li>
+                      <li class="nav-item"><a class="nav-link" href="#"><span>Link 4</span></a></li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="mainNavDropdown0">
+                          <span>Menu Dropdown</span>
+                          <svg class="icon icon-xs"></svg>
+                        </a>
+                        <div class="dropdown-menu" role="region" aria-labelledby="mainNavDropdown0">
+                          <div class="link-list-wrapper">
+                            <ul class="link-list">
+                              <li><a class="dropdown-item list-item" href="#"><span>Link lista 1</span></a></li>
+                              <li><a class="dropdown-item list-item" href="#"><span>Link lista 2</span></a></li>
+                              <li><a class="dropdown-item list-item" href="#"><span>Link lista 3</span></a></li>
+                              <li><span class="divider"></span></li>
+                              <li><a class="dropdown-item list-item" href="#"><span>Link lista 4</span></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <!-- megamenu -->
+                      <li class="nav-item dropdown megamenu">
+                        <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-2" data-focus-mouse="false">
+                            <span>Megamenu</span><svg role="img" class="icon icon-xs ms-1"></svg>
+                        </button>
+                        <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-2">
+                          <div class="megamenu pb-5 pt-3 py-lg-0">
+                            <div class="row">
+                              <div class="col-xs-12 col-lg-4 px-0">
+                                <div class="row">
+                                  <div class="col-12 it-vertical it-description pb-lg-3">
+                                    <div class="description-content ps-4 ps-sm-5 ms-3">
+                                      <div class="ratio ratio-21x9 lightgrey-bg-a1 mb-4 rounded">
+                                        <figure class="figure">
+                                          <img src="https://via.placeholder.com/560x240/ebebeb/808080/?text=Immagine" class="figure-img img-fluid rounded" alt="Segnaposto">
+                                        </figure>
+                                      </div>
+                                      <p>
+                                        Testo utile a fornire una descrizione dei contenuti della sezione <strong>megamenu</strong>.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-12 col-lg-8">
+                                <div class="it-heading-link-wrapper">
+                                  <a class="it-heading-link" href="#"><svg role="img" class="icon icon-sm me-2 mb-1"></svg>
+                                  <span>Esplora la sezione megamenu</span>
+                                  </a>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12 col-lg-6">
+                                    <div class="link-list-wrapper">
+                                      <ul class="link-list">
+                                        <li>
+                                          <a class="list-item dropdown-item" href="#">
+                                            <svg role="img" class="icon icon-sm me-2"></svg>
+                                            <span>Link lista 1</span>
+                                          </a>
+                                        </li>
+                                        <li>
+                                          <a class="list-item dropdown-item" href="#">
+                                            <svg role="img" class="icon icon-sm me-2"></svg>
+                                            <span>Link lista 2</span>
+                                          </a>
+                                        </li>
+                                        <li>
+                                          <a class="list-item dropdown-item " href="#">
+                                            
+                                            <span>Link lista 3</span>
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 col-lg-6">
+                                    <div class="link-list-wrapper">
+                                      <ul class="link-list">
+                                        <li>
+                                          <a class="list-item dropdown-item" href="#">
+                                            
+                                            <span>Link lista 4</span>
+                                          </a>
+                                        </li>
+                                        <li>
+                                          <a class="list-item dropdown-item" href="#">
+                                            
+                                            <span>Link lista 5</span>
+                                          </a>
+                                        </li>
+                                        <li>
+                                          <a class="list-item dropdown-item " href="#">
+                                            
+                                            <span>Link lista 6</span>
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-4">
+
+    <NuxtPage/>
+
+    <h2>Esempio di Card</h2>
+    <div class="my-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4">
+            <!--start card-->
+            <div class="card-wrapper card-space">
+              <div class="card card-bg card-big">
+                <div class="card-body">
+                  <div class="top-icon">
+                    <svg class="icon">
+                    </svg>
+                  </div>
+                  <h3 class="card-title h5 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor…</h3>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.</p>
+                  <a class="read-more" href="#">
+                    <span class="text">Leggi di più</span>
+                    <span class="visually-hidden">su Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                      eiusmod tempor…</span>
+                    <svg class="icon">
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!--end card-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2>Esempio di Form</h2>
+    <div class="my-5">
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4" class="active">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="inserisci il tuo indirizzo email">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="exampleInputPassword" class="active">Password</label>
+          <input type="password" data-bs-input class="form-control input-password" id="exampleInputPassword"
+            placeholder="inserisci la tua password">
+          <span class="password-icon" aria-hidden="true">
+            <svg class="password-icon-visible icon icon-sm">
+              
+            </svg>
+            <svg class="password-icon-invisible icon icon-sm d-none">
+              
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col">
+          <label for="inputAddress" class="active">Indirizzo</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Via Roma, 1">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">Comune</label>
+          <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputCAP">CAP</label>
+          <input type="text" class="form-control" id="inputCAP">
+        </div>
+        <div class="form-group col-md-4">
+          <div class="select-wrapper">
+            <label for="selectID">Provincia</label>
+            <select id="selectID">
+              <option value="Value 1">Opzione 1</option>
+              <option value="Value 2">Opzione 2</option>
+              <option value="Value 3">Opzione 3</option>
+              <option value="Value 4">Opzione 4</option>
+              <option value="Value 5">Opzione 5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-12 col-md-6">
+          <div class="form-check">
+            <div class="toggles">
+              <label for="toggleEsempio1a">
+                Label dell'interruttore 1
+                <input type="checkbox" id="toggleEsempio1a">
+                <span class="lever"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="form-group col text-center">
+          <button type="button" class="btn btn-outline-primary">Annulla</button>
+          <button type="submit" class="btn btn-primary">Conferma</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="it-footer">
+    <div class="it-footer-main">
+      <div class="container">
+        <section>
+          <div class="row clearfix">
+            <div class="col-sm-12">
+              <div class="it-brand-wrapper">
+                <a href="#">
+                  <svg class="icon">
+                    
+                  </svg>
+                  <div class="it-brand-text">
+                    <h2 class="no_toc">Lorem Ipsum</h2>
+                    <h3 class="no_toc d-none d-md-block">Inserire qui la tag line</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 pb-2">
+              <h4>
+                <a href="#" title="Vai alla pagina: Amministrazione">Amministrazione</a>
+              </h4>
+              <div class="link-list-wrapper">
+                <ul class="footer-list link-list clearfix">
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Giunta e consiglio">Giunta e consiglio</a>
+                  </li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Aree di competenza">Aree di competenza</a>
+                  </li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Dipendenti">Dipendenti</a></li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Luoghi">Luoghi</a></li>
+                  <li><a class="list-item" href="#"
+                      title="Vai alla pagina: Associazioni e società partecipate">Associazioni e società partecipate</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 pb-2">
+              <h4>
+                <a href="#" title="Vai alla pagina: Servizi">Servizi</a>
+              </h4>
+              <div class="link-list-wrapper">
+                <ul class="footer-list link-list clearfix">
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Pagamenti">Pagamenti</a></li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Sostegno">Sostegno</a></li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Domande e iscrizioni">Domande e
+                      iscrizioni</a></li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Segnalazioni">Segnalazioni</a></li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Autorizzazioni e concessioni">Autorizzazioni
+                      e concessioni</a></li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Certificati e dichiarazioni">Certificati e
+                      dichiarazioni</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 pb-2">
+              <h4>
+                <a href="#" title="Vai alla pagina: Novità">Novità</a>
+              </h4>
+              <div class="link-list-wrapper">
+                <ul class="footer-list link-list clearfix">
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Notizie">Notizie</a></li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Eventi">Eventi</a></li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Comunicati stampa">Comunicati stampa</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+              <h4>
+                <a href="#" title="Vai alla pagina: Documenti">Documenti</a>
+              </h4>
+              <div class="link-list-wrapper">
+                <ul class="footer-list link-list clearfix">
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Progetti e attività">Progetti e attività</a>
+                  </li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Delibere, determine e ordinanze">Delibere,
+                      determine e ordinanze</a></li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Bandi">Bandi</a></li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Concorsi">Concorsi</a></li>
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Albo pretorio">Albo pretorio</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-4 border-white border-top">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 pb-2">
+              <h4><a href="#" title="Vai alla pagina: Contatti">Contatti</a></h4>
+              <p>
+                <strong>Comune di Lorem Ipsum</strong><br />
+                Via Roma 0 - 00000 Lorem Ipsum Codice fiscale / P. IVA: 000000000
+              </p>
+              <div class="link-list-wrapper">
+                <ul class="footer-list link-list clearfix">
+                  <li><a class="list-item" href="#" title="Vai alla pagina: Posta Elettronica Certificata">Posta
+                      Elettronica Certificata</a></li>
+                  <li>
+                    <a class="list-item" href="#" title="Vai alla pagina: URP - Ufficio Relazioni con il Pubblico">URP -
+                      Ufficio Relazioni con il Pubblico</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 pb-2">
+              <h4><a href="#" title="Vai alla pagina: Lorem Ipsum">Lorem Ipsum</a></h4>
+            </div>
+            <div class="col-lg-4 col-md-4 pb-2">
+              <div class="pb-2">
+                <h4><a href="#" title="Vai alla pagina: Seguici su">Seguici su</a></h4>
+                <ul class="list-inline text-left social">
+                  <li class="list-inline-item">
+                    <a class="p-2 text-white" href="#" target="_blank"><svg class="icon icon-sm icon-white align-top">
+                        
+                      </svg><span class="visually-hidden">Designers Italia</span></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="p-2 text-white" href="#" target="_blank"><svg class="icon icon-sm icon-white align-top">
+                        
+                      </svg><span class="visually-hidden">Twitter</span></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="p-2 text-white" href="#" target="_blank"><svg class="icon icon-sm icon-white align-top">
+                        
+                      </svg><span class="visually-hidden">Medium</span></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="p-2 text-white" href="#" target="_blank"><svg class="icon icon-sm icon-white align-top">
+                        
+                      </svg><span class="visually-hidden">Behance</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="it-footer-small-prints clearfix">
+      <div class="container">
+        <h3 class="visually-hidden">Sezione Link Utili</h3>
+        <ul class="it-footer-small-prints-list list-inline mb-0 d-flex flex-column flex-md-row">
+          <li class="list-inline-item"><a href="#" title="Note Legali">Media policy</a></li>
+          <li class="list-inline-item"><a href="#" title="Note Legali">Note legali</a></li>
+          <li class="list-inline-item"><a href="#" title="Privacy-Cookies">Privacy policy</a></li>
+          <li class="list-inline-item"><a href="#" title="Mappa del sito">Mappa del sito</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  </div>
+</template>
