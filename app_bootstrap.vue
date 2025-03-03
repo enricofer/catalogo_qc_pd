@@ -1,10 +1,9 @@
 <script lang="ts" setup>
 useHead({
     link: [ 
+      { rel: "stylesheet", href: "/styles.css"},
       { rel: "stylesheet", href: "/bootstrap-italia.min.css"},
       { rel: "stylesheet", href: "/bootstrap-italia-comuni.css"},
-      { rel: "stylesheet", href: "/styles.css"},
-      { rel: "stylesheet", href: "/styles.scss"},
       { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
       { rel: "preload", href: "/bootstrap-italia/fonts/Lora/lora-v20-latin-ext_latin-regular.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
       { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
@@ -29,115 +28,17 @@ useHead({
 
 <template>
   <div>
-
-    <header class="it-header-wrapper" data-bs-target="#header-nav-wrapper" style="">
-      <div class="it-header-slim-wrapper">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="it-header-slim-wrapper-content">
-                <a class="d-lg-block navbar-brand" target="_blank" href="https://www.regione.veneto.it/" aria-label="Vai al portale della Regione del Veneto - link esterno - apertura nuova scheda" title="Vai al portale della Regione del Veneto">Regione del Veneto</a>
-                <div class="it-header-slim-right-zone" role="navigation">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="it-nav-wrapper">
-        <div class="it-header-center-wrapper theme-light">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="it-header-center-content-wrapper">
-                  <div class="it-brand-wrapper">
-                      <a href="homepage.html" title="Vai alla homepage">
-                        <svg width="82" height="82" class="icon" aria-hidden="true">
-                          <image xlink:href="https://www.comune.padova.it/assets/images/logo.svg"></image>
-                        </svg>
-                        <div class="it-brand-text">
-                          <div class="it-brand-title">Comune di Padova</div>
-                          <div class="it-brand-tagline d-none d-md-block">Settore Urbanistica e Servizi catastali</div>
-                        </div>
-                      </a>
-                  </div>
-                  <div class="it-right-zone">
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="it-header-navbar-wrapper" id="header-nav-wrapper">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <!--start nav-->
-                <div class="navbar navbar-expand-lg has-megamenu">
-                  <button class="custom-navbar-toggler" type="button" aria-controls="nav4" aria-expanded="false" aria-label="Mostra/Nascondi la navigazione" data-bs-target="#nav4" data-bs-toggle="navbarcollapsible">
-                    <svg class="icon">
-                      <use href="/bootstrap-italia/svg/sprites.svg#it-burger"></use>
-                    </svg>
-                  </button>
-                  <div class="navbar-collapsable" id="nav4">
-                    <div class="overlay" style="display: none;"></div>
-                    <div class="close-div">
-                      <button class="btn close-menu" type="button">
-                        <span class="visually-hidden">Nascondi la navigazione</span>
-                        <svg class="icon">
-                          <use href="/bootstrap-italia/svg/sprites.svg#it-close-big"></use>
-                        </svg>
-                      </button>
-                    </div>
-                    <div class="menu-wrapper">
-                      <a href="homepage.html" class="logo-hamburger">
-                        <svg class="icon" aria-hidden="true">
-                          <use href="/bootstrap-italia/svg/sprites.svg#it-pa"></use>
-                        </svg>
-                        <div class="it-brand-text">
-                          <div class="it-brand-title">Comune di Padova</div>
-                        </div>
-                      </a>
-                      <nav aria-label="Principale">
-                        <ul class="navbar-nav" data-element="main-navigation">
-                          <li class="nav-item">
-                              <NuxtLink class="main-nav-link nav-link text-truncate" to="/datasets"><span>Dataset</span></NuxtLink>
-                          </li>
-                          <li class="nav-item">
-                              <NuxtLink class="main-nav-link nav-link text-truncate" to="/aggiornamenti"><span>Aggiornamenti</span></NuxtLink>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="../placeholder" data-element="live">
-                              <span></span>
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
-                      <nav aria-label="Secondaria">
-                        <ul class="navbar-nav navbar-secondary">
-                          <li class="nav-item">
-                            <a class="nav-link" href="../sito/placeholder.html"></a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <div class="app-layouts"><div class="app-page-layout"><NuxtPage/></div></div>
-    </main>
+    <div style="background-color: burlywood;padding: 0.5em;">
+      <h1>CataUrba</h1>
+      <NuxtLink to="/datasets">dataset</NuxtLink> |
+      <NuxtLink to="/aggiornamenti">Aggiornamenti</NuxtLink>
+    </div>
+    <hr>
+    <NuxtPage/>
   </div>
 </template>
 
-<style>
+<style scoped>
 
 :root{
     --bootstrap-italia-version:"2.9.0"
@@ -365,10 +266,4 @@ body{
     src:local(""),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.woff2) format("woff2"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.woff) format("woff"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.ttf) format("truetype"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.svg#RobotoMono) format("svg")
 }
 
-h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
-	margin-top: 0;
-	margin-bottom: 8px;
-	font-weight: 700;
-	line-height: 1.2;
-}
 </style>
