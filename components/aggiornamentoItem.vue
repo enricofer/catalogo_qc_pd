@@ -6,12 +6,25 @@ const aggItem = useAttrs().var
 
 <template>
     <div>
-        <h3>Aggiornamento del {{ aggItem.data }}</h3>
-        <ul>
-            <li>{{ aggItem.causale }}</li>
-            <li v-for="dsItem in aggItem.datasets" :key="dsItem">
-                    <datasetItem :ds="dsItem"></DatasetItem>
-            </li>
-        </ul>
+
+        <div class="cmp-card-latest-messages mb-3 mb-30">
+            <div class="card shadow-sm px-4 pt-4 pb-4 rounded">
+                <span class="visually-hidden">{{ aggItem.data }}</span><!---->
+                <div class="card-body p-0 my-2">
+                    <h3 class="green-title-big t-primary mb-8">
+                    <a class="text-decoration-none" data-element="service-link" :href="'/dataset/' + aggItem.id + '/'">{{ aggItem.data }}</a><!---->
+                    </h3>
+                    <p class="text-paragraph"> {{ aggItem.causale }} </p>
+                    <p class="text-paragraph pt-2"> Dataset aggiornati: </p>
+                    <div class="row">
+                        <div class="col-12 col-lg-4" v-for="dsItem in aggItem.datasets" :key="dsItem">
+                                <datasetCardItem :ds="dsItem"></DatasetCardItem>
+                        </div>
+                    </div>
+                    <!---->
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>

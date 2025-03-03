@@ -56,10 +56,8 @@ const search = () => {
                         <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
                             <h1 data-element="page-name" class="text-black">Datasets</h1>
                             <div class="hero-text">
-                            <p >
-                            <p>Collezione dei dati territoriali liberamente disponibili.</p>
-                            <p>&nbsp;</p>
-                            </p>
+                            <p>Catalogo dei dati territoriali.</p>
+                            <small>Quadro conoscitivo ai sensi della L.R. 11/2004.</small>
                             </div>
                             <!---->
                         </div>

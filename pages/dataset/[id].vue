@@ -60,12 +60,13 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
                 <div class="col-12">
                     <h2 class="title-xxlarge mb-4 mt-5 mb-lg-10"> Altre informazioni </h2>
                 </div>
-                <div class="col-12 col-lg-8 pt-lg-50 pb-lg-50">
+                <div class="col-12 col-lg-8  pb-lg-50">
 
                     <br/>
                             <p>{{ data.metadati_selection.Descrizione }}</p>
                             <p>{{ data.tipo }} in formato {{ data.estensione }}</p>
                             <p>hash MD5: {{ data.hash_md5 }}</p>
+                            <datasetMap :ds="data"></datasetMap>
                     <!---->
                             <h3><a :href="'https://urbanistica.comune.padova.it/dbtman/qc/download/' + data.id.toString() + '/'">Scarica i dati grezzi</a></h3>
                     <!---->
@@ -87,11 +88,5 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
             </div>
         </div>
 
-
-
-        <h2>dataset {{ id }}</h2>
-        <div>
-            {{ data }}
-        </div>
     </div>
 </template>

@@ -21,7 +21,10 @@ useHead({
       { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
       { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
       { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.woff", as: "font", type: "font/woff", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" }
+      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
+      { rel: "stylesheet", href: "/styles.css"},
+      { rel: "stylesheet", href: "/styles.scss"},
+      { rel: "stylesheet", href: "/bifonts.scss"}
     ],
 })
 </script>
@@ -54,7 +57,7 @@ useHead({
                   <div class="it-brand-wrapper">
                       <a href="homepage.html" title="Vai alla homepage">
                         <svg width="82" height="82" class="icon" aria-hidden="true">
-                          <image xlink:href="https://www.comune.padova.it/assets/images/logo.svg"></image>
+                          <image xlink:href="/logo.svg"></image>
                         </svg>
                         <div class="it-brand-text">
                           <div class="it-brand-title">Comune di Padova</div>
@@ -267,102 +270,6 @@ body{
     box-shadow:0 0 0 3px #000!important;
     outline:3px solid #fff!important;
     outline-offset:3px
-}
-@font-face{
-    font-family:Titillium Web;
-    font-style:normal;
-    font-weight:300;
-    font-display:swap;
-    src:url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.eot);
-    src:local(""),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.woff2) format("woff2"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.woff) format("woff"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.ttf) format("truetype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.svg#TitilliumWeb) format("svg")
-}
-@font-face{
-    font-family:Titillium Web;
-    font-style:italic;
-    font-weight:300;
-    font-display:swap;
-    src:url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300italic.eot);
-    src:local(""),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300italic.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300italic.woff2) format("woff2"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300italic.woff) format("woff"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300italic.ttf) format("truetype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300italic.svg#TitilliumWeb) format("svg")
-}
-@font-face{
-    font-family:Titillium Web;
-    font-style:normal;
-    font-weight:400;
-    font-display:swap;
-    src:url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.eot);
-    src:local(""),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.woff2) format("woff2"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.woff) format("woff"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.ttf) format("truetype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.svg#TitilliumWeb) format("svg")
-}
-@font-face{
-    font-family:Titillium Web;
-    font-style:italic;
-    font-weight:400;
-    font-display:swap;
-    src:url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.eot);
-    src:local(""),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.woff2) format("woff2"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.woff) format("woff"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.ttf) format("truetype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.svg#TitilliumWeb) format("svg")
-}
-@font-face{
-    font-family:Titillium Web;
-    font-style:normal;
-    font-weight:700;
-    font-display:swap;
-    src:url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.eot);
-    src:local(""),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.woff2) format("woff2"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.woff) format("woff"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.ttf) format("truetype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.svg#TitilliumWeb) format("svg")
-}
-@font-face{
-    font-family:Titillium Web;
-    font-style:italic;
-    font-weight:700;
-    font-display:swap;
-    src:url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.eot);
-    src:local(""),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.woff2) format("woff2"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.woff) format("woff"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.ttf) format("truetype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.svg#TitilliumWeb) format("svg")
-}
-@font-face{
-    font-family:Titillium Web;
-    font-style:normal;
-    font-weight:600;
-    font-display:swap;
-    src:url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600.eot);
-    src:local(""),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600.woff2) format("woff2"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600.woff) format("woff"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600.ttf) format("truetype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600.svg#TitilliumWeb) format("svg")
-}
-@font-face{
-    font-family:Titillium Web;
-    font-style:italic;
-    font-weight:600;
-    font-display:swap;
-    src:url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600italic.eot);
-    src:local(""),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600italic.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600italic.woff2) format("woff2"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600italic.woff) format("woff"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600italic.ttf) format("truetype"),url(/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600italic.svg#TitilliumWeb) format("svg")
-}
-@font-face{
-    font-family:Roboto Mono;
-    font-style:normal;
-    font-weight:400;
-    font-display:swap;
-    src:url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-regular.eot);
-    src:local(""),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-regular.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-regular.woff2) format("woff2"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-regular.woff) format("woff"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-regular.ttf) format("truetype"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-regular.svg#RobotoMono) format("svg")
-}
-@font-face{
-    font-family:Roboto Mono;
-    font-style:normal;
-    font-weight:700;
-    font-display:swap;
-    src:url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700.eot);
-    src:local(""),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700.woff2) format("woff2"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700.woff) format("woff"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700.ttf) format("truetype"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700.svg#RobotoMono) format("svg")
-}
-@font-face{
-    font-family:Roboto Mono;
-    font-style:italic;
-    font-weight:400;
-    font-display:swap;
-    src:url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-italic.eot);
-    src:local(""),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-italic.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-italic.woff2) format("woff2"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-italic.woff) format("woff"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-italic.ttf) format("truetype"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-italic.svg#RobotoMono) format("svg")
-}
-@font-face{
-    font-family:Roboto Mono;
-    font-style:italic;
-    font-weight:700;
-    font-display:swap;
-    src:url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.eot);
-    src:local(""),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.eot?#iefix) format("embedded-opentype"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.woff2) format("woff2"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.woff) format("woff"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.ttf) format("truetype"),url(/bootstrap-italia/fonts/Roboto_Mono/roboto-mono-v13-latin-ext_latin-700italic.svg#RobotoMono) format("svg")
 }
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
