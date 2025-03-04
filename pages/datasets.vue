@@ -5,22 +5,60 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
 
 const searchTerm = defineModel();
 
-const filterItems = (filter) => {
+const state = reactive({
+    num_items: 0,
+    itemPerPag: 20,
+    fromItem: 0,
+    toItem: 20,
+    searchTerm: ""
+})
+
+const filterItems = (filter: string) => {
+    
     const items = [];
     data.value.result.forEach(function (item, index) {
         if (filter == "" || item.dataset.toLowerCase().includes(searchTerm.value.toLowerCase()) ) {
             items.push(item);
         };
     });
-    return items
+
+    state.num_items = items.length;
+
+    if (filter != state.searchTerm) {
+        state.searchTerm = filter;
+        state.fromItem = 0;
+        state.toItem = state.itemPerPag - 1;
+    }
+
+    return items.slice(state.fromItem, state.toItem);
+};
+
+const search = () => {
+    found.items = filterItems(searchTerm.value ? searchTerm : "");
 };
 
 const found = reactive({
-    items: filterItems("")
-})
+    items: filterItems(""),
+    num_items: 0
+});
 
-const search = () => {
-    found.items = filterItems(searchTerm.value)
+const sfoglia = (step) => {
+    console.log("SFOGLIA1")
+    state.fromItem += state.itemPerPag * step;
+    state.toItem = state.fromItem + state.itemPerPag;
+
+    if ( state.fromItem < 0 ) {
+        state.fromItem = 0;
+        state.toItem = state.itemPerPag -1
+    }
+
+    if ( state.toItem > state.num_items -1) {
+        state.fromItem -= state.itemPerPag * step;
+        state.toItem = state.num_items - 1;
+    }
+
+    console.log("SFOGLIA2", step, state.num_items, state.fromItem, state.toItem )
+    search()
 };
 
 </script>
@@ -73,13 +111,12 @@ const search = () => {
                 <div class="col-12">
                     <h2 class="title-xxlarge mb-4 mt-5 mb-lg-10"> Esplora tutti i dataset </h2>
                 </div>
-                <div class="col-12 col-lg-8 pt-lg-50 pb-lg-50">
+                <div class="col-12 col-lg-8 pt-lg-20 pb-lg-20">
                     <div class="cmp-input-search">
                         <div class="form-group autocomplete-wrapper mb-2 mb-lg-4">
                             <div class="input-group">
                             <label for="autocomplete-autocomplete-three" class="visually-hidden">Cerca una parola chiave</label>
                             <input v-model="searchTerm" v-on:input="search" type="search" placeholder="Cerca una parola chiave" id="autocomplete-autocomplete-three" name="autocomplete-three" class="autocomplete form-control">
-                            <div class="input-group-append"><button type="button" id="button-3" class="btn btn-primary"> Invio </button></div>
                             <span aria-hidden="true" class="autocomplete-icon">
                                 <svg class="icon icon-sm icon-primary">
                                 <use href="/bootstrap-italia/svg/sprites.svg#it-search"></use>
@@ -88,12 +125,35 @@ const search = () => {
                             </div>
                         </div>
                     </div>
-                    <!---->
-                    <p class="mb-4"><strong>{{ found.items.length }}</strong> servizi trovati in ordine alfabetico </p>
+                    <!---->          
+                    <div class="container pb-4" style="padding-right: 0; padding-left: 0;">
+                        <div class="row">
+                            <div class="col-7">
+                                <strong>{{ state.num_items }}</strong> dataset trovati in ordine alfabetico
+                            </div>
+                            <div class="col-1">
+                            </div>
+                            <div class="float-right col-4" style="justify-content: flex-end;display: flex;">
+                                    da {{ state.fromItem + 1 }} a {{ state.toItem }}<a href="#" @click="sfoglia(-1)"><img src="~/bootstrap-icons/icons/caret-left-fill.svg" alt="Bootstrap" width="20" height="20"></a>|<a href="#" @click="sfoglia(1)"><img src="~/bootstrap-icons/icons/caret-right-fill.svg" alt="Bootstrap" width="20" height="20"></a>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div v-for="(dsItem, index) in found.items" :key="dsItem.id" class="app-card" dataelement="service-link">
                         <datasetItem :ds="dsItem"></DatasetItem>
                     </div>
-                    
+
+                    <div class="container pt-0" style="padding-right: 0; padding-left: 0;">
+                        <div class="row">
+                            <div class="col-7">
+                            </div>
+                            <div class="col-1">
+                            </div>
+                            <div class="float-right col-4" style="justify-content: flex-end;display: flex;">
+                                    da {{ state.fromItem + 1 }} a {{ state.toItem + 1 }}<a href="#" @click="sfoglia(-1)"><img src="~/bootstrap-icons/icons/caret-left-fill.svg" alt="Bootstrap" width="20" height="20"></a>|<a href="#" @click="sfoglia(1)"><img src="~/bootstrap-icons/icons/caret-right-fill.svg" alt="Bootstrap" width="20" height="20"></a>
+                            </div>
+                        </div>
+                    </div>
                     <!---->
                 </div>
                 <div class="col-12 col-lg-4 pt-30 pt-lg-5 ps-lg-5 order-first order-md-last pb-lg-5">

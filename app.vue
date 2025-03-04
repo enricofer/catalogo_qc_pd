@@ -250,11 +250,11 @@ html,body{
         line-height:1.555
     }
 }
+
 :focus:not(.focus--mouse){
-    border-color:#f90!important;
-    box-shadow:0 0 0 2px #f90!important;
     outline:none!important
 }
+
 body{
     color:#5b6f82
 }
@@ -264,12 +264,6 @@ body{
 body{
     font-family:Titillium Web;
     color:#191919
-}
-:focus:not(.focus--mouse){
-    border-color:#000!important;
-    box-shadow:0 0 0 3px #000!important;
-    outline:3px solid #fff!important;
-    outline-offset:3px
 }
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {

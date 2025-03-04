@@ -76,7 +76,7 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
                     <h2 class="title-xsmall-semi-bold"><span>Aggiornamenti del dataset</span></h2>
                     <ul class="link-list t-primary">
                         <li v-for="(agg, index) in data.aggiornamenti" :key="agg.id" class="mb-3 mt-3">
-                            <a class="list-item ps-0 title-medium" :href="'/qc/var/' + agg.id.toString()" ><span>{{ agg.data }} {{ agg.causale }}</span></a>
+                            <a class="list-item ps-0 title-medium" :href="'/qc/var/' + agg.id.toString() +'/'" ><span>{{ agg.data }} {{ agg.causale }}</span></a>
                         </li>
 
                         <!---->
