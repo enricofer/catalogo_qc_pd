@@ -22,7 +22,7 @@ useHead({
       { rel: "stylesheet", href: "/bifonts.css"},
       //{ rel: "stylesheet", href: "/bootstrap-italia.min.css"},
       { rel: "stylesheet", href: "/inline.css"},
-      //{ rel: "stylesheet", href: "/bootstrap-italia-comuni.css"},
+      { rel: "stylesheet", href: "/bootstrap-italia-comuni.css"},
       { rel: "stylesheet", href: "/styles.css"},
     ],
 })

@@ -12,7 +12,7 @@ const aggItem = useAttrs().var
                 <span class="visually-hidden">{{ aggItem.data }}</span><!---->
                 <div class="card-body p-0 my-2">
                     <h3 class="green-title-big t-primary mb-8">
-                    <a class="text-decoration-none" data-element="service-link" :href="'/dataset/' + aggItem.id + '/'">{{ aggItem.data }}</a><!---->
+                    <a class="text-decoration-none" data-element="service-link" :href="'/aggiornamento/' + aggItem.id + '/'">{{ aggItem.data }}</a><!---->
                     </h3>
                     <p class="text-paragraph"> {{ aggItem.causale }} </p>
                     <p class="text-paragraph pt-2"> Dataset aggiornati: </p>

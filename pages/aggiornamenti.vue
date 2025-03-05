@@ -3,7 +3,7 @@ import { ref, reactive } from 'vue';
 
 const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/var/');
 
-const inEvidenza = computed(() => { return data.value.result.slice(0,4) })
+const inEvidenza = computed(() => { return data.value.result.slice(0,3) })
 
 const searchTerm = defineModel();
 
@@ -101,13 +101,7 @@ const search = () => {
                 </div>
                 <div class="col-12 col-lg-4 pt-30 pt-lg-5 ps-lg-5 order-first order-md-last pb-lg-5">
                     <div class="link-list-wrap">
-                    <h2 class="title-xsmall-semi-bold"><span>AGGIORNAMENTI IN EVIDENZA</span></h2>
-                    <ul class="link-list t-primary">
-                        <li v-for="aggItem in inEvidenza" :key="aggItem.id" class="mb-3 mt-3"><a class="list-item ps-0 title-medium" :href="'/aggiornamenti/' + aggItem.id.toString()"><span>{{ aggItem.data }} {{ aggItem.causale }}</span></a></li>
-
-                        <!---->
-                    </ul>
-                    <!----><!---->
+                    <aggiornamentiInEvidenza></aggiornamentiInEvidenza>
                     </div>
                 </div>
                 </div>
