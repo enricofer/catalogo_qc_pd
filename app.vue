@@ -20,9 +20,6 @@ useHead({
       { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
 
       { rel: "stylesheet", href: "/bifonts.css"},
-      //{ rel: "stylesheet", href: "/bootstrap-italia.min.css"},
-      { rel: "stylesheet", href: "/inline.css"},
-      //{ rel: "stylesheet", href: "/bootstrap-italia-comuni.css"},
       { rel: "stylesheet", href: "/styles.css"},
     ],
 })
@@ -271,6 +268,34 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 	margin-bottom: 8px;
 	font-weight: 700;
 	line-height: 1.2;
+}
+
+ul.list-inline, ul.link-list, .it-list-wrapper .it-list {
+	padding-left: unset !important;
+}
+
+a:link {
+  color: #006242;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #006242;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #006242;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #006242;
+  background-color: transparent;
+  text-decoration: underline;
 }
 
 </style>
