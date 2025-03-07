@@ -63,13 +63,23 @@ onMounted(async () => {
         }),
         target: 'mapa'
     });
+
+    console.log(datasetItem.info.layers[0])
+    map.getView().fit(datasetItem.info.layers[0].geometryFields[0].extent)
 })
 
 </script>
 
 <template>
     <div>
-        <div id="mapa" ref="mapElementRef" style="width: 100%; height: 400px"></div>
+        <div class="container">
+            <div class="row">
+                <div id="mapa" ref="mapElementRef" class="col-8" style="height: 600px"></div>
+                <div id="legenda" ref="legendElementRef" class="col-3" >
+                    <img :src="'https://urbanistica.comune.padova.it/dbtman/qs/?MAP=/dati/QC/99_SERVIZI/qc.qgs&service=WMS&request=GetLegendGraphic&layers=' + datasetItem.dataset" alt="">
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
