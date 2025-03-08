@@ -9,9 +9,13 @@ import OSM from 'ol/source/OSM.js';
 import TileLayer from 'ol/layer/Tile.js';
 import TileWMS from 'ol/source/TileWMS.js';
 
-import { ref, useTemplateRef, onMounted } from 'vue'
+import { ref, useTemplateRef, onMounted, reactive } from 'vue'
 
 const datasetItem = useAttrs().ds;
+
+const queryResult = reactive({
+    features: []
+})
 
 onMounted(async () => {
     const mapElementRef2 = useTemplateRef("mapElementRef");
@@ -64,6 +68,25 @@ onMounted(async () => {
         target: 'mapa'
     });
 
+    map.on('singleclick', function (evt) {
+        queryResult.features = [];
+        const viewResolution = /** @type {number} */ (map.getView().getResolution());
+        const url = ds_lyr.getSource().getFeatureInfoUrl(
+            evt.coordinate,
+            viewResolution,
+            'EPSG:3003',
+            {'INFO_FORMAT': 'application/json', 'QUERY_LAYERS': datasetItem.dataset},
+        );
+        if (url) {
+            fetch(url)
+            .then((response) => response.json())
+            .then((res) => {
+                console.log(res)
+                queryResult.features = res.features;
+            });
+        }
+    });
+
     console.log(datasetItem.info.layers[0])
     map.getView().fit(datasetItem.info.layers[0].geometryFields[0].extent)
 })
@@ -73,6 +96,7 @@ onMounted(async () => {
 <template>
     <div>
         <div class="container">
+            <tabularSample v-if="queryResult.features.length > 0" :features="queryResult.features"></tabularSample>
             <div class="row">
                 <div id="mapa" ref="mapElementRef" class="col-8" style="height: 600px"></div>
                 <div id="legenda" ref="legendElementRef" class="col-3" >
