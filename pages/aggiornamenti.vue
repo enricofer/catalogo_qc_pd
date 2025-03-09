@@ -7,6 +7,14 @@ const inEvidenza = computed(() => { return data.value.result.slice(0,3) })
 
 const searchTerm = defineModel();
 
+const state = reactive({
+    num_items: 0,
+    itemPerPag: 20,
+    fromItem: 0,
+    toItem: 20,
+    searchTerm: ""
+})
+
 const filterItems = (filter) => {
     const items = [];
     data.value.result.forEach(function (item, index) {
@@ -15,7 +23,16 @@ const filterItems = (filter) => {
             items.push(item);
         };
     });
-    return items
+
+    state.num_items = items.length;
+
+    if (filter != state.searchTerm) {
+        state.searchTerm = filter;
+        state.fromItem = 0;
+        state.toItem = state.itemPerPag - 1;
+    }
+
+    return items.slice(state.fromItem, state.toItem);
 };
 
 const found = reactive({
@@ -24,6 +41,25 @@ const found = reactive({
 
 const search = () => {
     found.items = filterItems(searchTerm.value)
+};
+
+const sfoglia = (step) => {
+    console.log("SFOGLIA1")
+    state.fromItem += state.itemPerPag * step;
+    state.toItem = state.fromItem + state.itemPerPag;
+
+    if ( state.fromItem < 0 ) {
+        state.fromItem = 0;
+        state.toItem = state.itemPerPag -1
+    }
+
+    if ( state.toItem > state.num_items -1) {
+        state.fromItem -= state.itemPerPag * step;
+        state.toItem = state.num_items - 1;
+    }
+
+    console.log("SFOGLIA2", step, state.num_items, state.fromItem, state.toItem )
+    search()
 };
 
 </script>
@@ -90,11 +126,14 @@ const search = () => {
                             </div>
                         </div>
                     </div>
-                    <!---->
-                    <p class="mb-4"><strong>{{ found.items.length }}</strong> aggiornamenti trovati in ordine cronologico </p>
+                    <!---->   
+                    <PaginazioneControl @click="search" :state="state" :msg="'aggiornamenti trovati in ordine cronologico'"></PaginazioneControl>          
+
                     <div v-for="(aggItem, index) in found.items" :key="aggItem.id" class="app-card" dataelement="service-link">
                         <aggiornamentoItem :var="aggItem"></aggiornamentoItem>
                     </div>
+
+                    <PaginazioneControl @click="search" :state="state"></PaginazioneControl>
                     
                     <!---->
                 </div>

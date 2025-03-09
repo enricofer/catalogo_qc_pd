@@ -26,7 +26,7 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
                                 <!----><!---->
                             </li>
                             <li class="breadcrumb-item"><a href="/aggiornamenti">Aggiornamenti</a><span class="separator">/</span></li>
-                            <li class="breadcrumb-item active">{{ id }}</li>
+                            <li class="breadcrumb-item active">{{ data.data }}</li>
                             <!----><!----><!---->
                             </ol>
                         </nav>

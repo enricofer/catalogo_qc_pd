@@ -46,25 +46,6 @@ const found = reactive({
     num_items: 0
 });
 
-const sfoglia = (step) => {
-    console.log("SFOGLIA1")
-    state.fromItem += state.itemPerPag * step;
-    state.toItem = state.fromItem + state.itemPerPag;
-
-    if ( state.fromItem < 0 ) {
-        state.fromItem = 0;
-        state.toItem = state.itemPerPag -1
-    }
-
-    if ( state.toItem > state.num_items -1) {
-        state.fromItem -= state.itemPerPag * step;
-        state.toItem = state.num_items - 1;
-    }
-
-    console.log("SFOGLIA2", step, state.num_items, state.fromItem, state.toItem )
-    search()
-};
-
 </script>
 
 <template>
@@ -129,35 +110,15 @@ const sfoglia = (step) => {
                             </div>
                         </div>
                     </div>
-                    <!---->          
-                    <div class="container pb-4" style="padding-right: 0; padding-left: 0;">
-                        <div class="row">
-                            <div class="col-7">
-                                <strong>{{ state.num_items }}</strong> dataset trovati in ordine alfabetico
-                            </div>
-                            <div class="col-1">
-                            </div>
-                            <div class="float-right col-4" style="justify-content: flex-end;display: flex;">
-                                    da {{ state.fromItem + 1 }} a {{ state.toItem }}<a href="#" @click="sfoglia(-1)"><img src="~/bootstrap-icons/icons/caret-left-fill.svg" alt="Bootstrap" width="20" height="20"></a>|<a href="#" @click="sfoglia(1)"><img src="~/bootstrap-icons/icons/caret-right-fill.svg" alt="Bootstrap" width="20" height="20"></a>
-                            </div>
-                        </div>
-                    </div>
+                    <!---->   
+
+                    <PaginazioneControl @click="search" :state="state" :msg="'dataset trovati in ordine alfabetico'"></PaginazioneControl>    
                     
                     <div v-for="(dsItem, index) in found.items" :key="dsItem.id" class="app-card" dataelement="service-link">
                         <datasetItem :ds="dsItem"></DatasetItem>
                     </div>
 
-                    <div class="container pt-0" style="padding-right: 0; padding-left: 0;">
-                        <div class="row">
-                            <div class="col-7">
-                            </div>
-                            <div class="col-1">
-                            </div>
-                            <div class="float-right col-4" style="justify-content: flex-end;display: flex;">
-                                    da {{ state.fromItem + 1 }} a {{ state.toItem + 1 }}<a href="#" @click="sfoglia(-1)"><img src="~/bootstrap-icons/icons/caret-left-fill.svg" alt="Bootstrap" width="20" height="20"></a>|<a href="#" @click="sfoglia(1)"><img src="~/bootstrap-icons/icons/caret-right-fill.svg" alt="Bootstrap" width="20" height="20"></a>
-                            </div>
-                        </div>
-                    </div>
+                    <PaginazioneControl @click="search" :state="state"></PaginazioneControl>
                     <!---->
                 </div>
                 <div class="col-12 col-lg-4 pt-30 pt-lg-5 ps-lg-5 order-first order-md-last pb-lg-5">
