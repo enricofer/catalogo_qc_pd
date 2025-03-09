@@ -25,7 +25,7 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
                             <li class="breadcrumb-item">
                                 <!----><!---->
                             </li>
-                            <li class="breadcrumb-item"><a href="/datasets">Dataset</a><span class="separator">/</span></li>
+                            <li class="breadcrumb-item"><a href="/catalogo">Catalogo</a><span class="separator">/</span></li>
                             <li class="breadcrumb-item active">{{ id }}</li>
                             <!----><!----><!---->
                             </ol>
@@ -73,7 +73,7 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
                 </div>
                 <div class="col-12 col-lg-4 pt-30 pt-lg-5 ps-lg-5 order-first order-md-last pb-lg-5">
                     <div class="link-list-wrap">
-                    <h2 class="title-xsmall-semi-bold"><span>Aggiornamenti del dataset</span></h2>
+                    <h2 class="title-small-semi-bold"><span>AGGIORNAMENTI DEL DATASET</span></h2>
                     <ul class="link-list t-primary">
                         <li v-for="(agg, index) in data.aggiornamenti" :key="agg.id" class="mb-3 mt-3">
                             <a class="list-item ps-0 title-medium" :href="'/aggiornamento/' + agg.id.toString() +'/'" ><span>{{ agg.data }} {{ agg.causale }}</span></a>

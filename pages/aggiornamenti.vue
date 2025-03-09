@@ -57,10 +57,9 @@ const search = () => {
                 <div class="cmp-hero">
                     <section class="it-hero-wrapper bg-white align-items-start">
                         <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
-                            <h1 data-element="page-name" class="text-black">Aggiornamenti</h1>
+                            <h1 data-element="page-name" class="text-black">Aggiornamenti del Quadro Conoscitivo</h1>
                             <div class="hero-text">
-                            <p>Aggiornamenti del Quadro Conoscitivo</p>
-                            <small>Ai sensi dell'art. 12 della L.R. 11/2004.</small>
+                            <p>Ai sensi dell'art. 12 della L.R. 11/2004</p>
                             </div>
                             <!---->
                         </div>

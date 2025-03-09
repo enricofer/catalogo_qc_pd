@@ -102,7 +102,7 @@ useHead({
                       <nav aria-label="Principale">
                         <ul class="navbar-nav" data-element="main-navigation">
                           <li class="nav-item">
-                              <NuxtLink class="main-nav-link nav-link text-truncate" to="/datasets"><span>Dataset</span></NuxtLink>
+                              <NuxtLink class="main-nav-link nav-link text-truncate" to="/catalogo"><span>Catalogo</span></NuxtLink>
                           </li>
                           <li class="nav-item">
                               <NuxtLink class="main-nav-link nav-link text-truncate" to="/aggiornamenti"><span>Aggiornamenti</span></NuxtLink>
