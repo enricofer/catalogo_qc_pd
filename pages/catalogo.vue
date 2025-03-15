@@ -125,11 +125,9 @@ const found = reactive({
                     <div class="link-list-wrap">
                     <h2 class="title-xsmall-semi-bold"><span>DATASET IN EVIDENZA</span></h2>
                     <ul class="link-list t-primary">
-                        <li class="mb-3 mt-3"><a class="list-item ps-0 title-medium" href="/servizi/giustizia-e-sicurezza-pubblica/albo-pretorio-online"><span>Albo pretorio online</span></a></li>
-                        <li class="mb-3 mt-3"><a class="list-item ps-0 title-medium" href="/servizi/anagrafe-e-stato-civile/carta-didentita-elettronica-cie-30"><span>Carta d'identità elettronica - Cie 3.0</span></a></li>
-                        <li class="mb-3 mt-3"><a class="list-item ps-0 title-medium" href="/servizi/anagrafe-e-stato-civile/pubblicazioni-di-matrimonio"><span>Pubblicazioni di matrimonio</span></a></li>
-                        <li class="mb-3 mt-3"><a class="list-item ps-0 title-medium" href="/servizi/autorizzazioni/richiesta-di-patrocinio-comunale"><span>Richiesta di patrocinio comunale</span></a></li>
-                        <li class="mb-3 mt-3"><a class="list-item ps-0 title-medium" href="/servizi/vita-lavorativa/servizio-notifiche-atti"><span>Servizio notifiche atti</span></a></li>
+                        <li v-for="dsItem in data.trending" :key="dsItem.id" class="mb-3 mt-3">
+                                <a class="list-item ps-0 title-medium" :href="'/dataset/'+dsItem.dataset"><span>{{ dsItem.dataset }}</span></a>
+                        </li>
                         <!---->
                     </ul>
                     <!----><!---->
