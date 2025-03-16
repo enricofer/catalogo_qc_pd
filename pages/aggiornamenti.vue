@@ -7,6 +7,8 @@ const inEvidenza = computed(() => { return data.value.result.slice(0,3) })
 
 const searchTerm = defineModel();
 
+const rootPath = useRootPath();
+
 const state = reactive({
     num_items: 0,
     itemPerPag: 20,
@@ -75,7 +77,7 @@ const sfoglia = (step) => {
                         <div role="navigation" class="cmp-breadcrumbs">
                         <nav aria-label="breadcrumb" class="breadcrumb-container">
                             <ol data-element="breadcrumb" class="breadcrumb p-0">
-                            <li class="breadcrumb-item"><a href="/">Home</a><span class="separator">/</span></li>
+                            <li class="breadcrumb-item"><a :href="rootPath">Home</a><span class="separator">/</span></li>
                             <li class="breadcrumb-item">
                                 <!----><!---->
                             </li>

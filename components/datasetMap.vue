@@ -98,8 +98,8 @@ onMounted(async () => {
         <div class="container">
             <tabularSample v-if="queryResult.features.length > 0" :features="queryResult.features"></tabularSample>
             <div class="row">
-                <div id="mapa" ref="mapElementRef" class="col-8" style="height: 600px"></div>
-                <div id="legenda" ref="legendElementRef" class="col-3" >
+                <div id="mapa" ref="mapElementRef" class="col-8 p-0" style="height: 600px;background-color: rgb(235, 238, 240);"></div>
+                <div id="legenda" ref="legendElementRef" class="col-3 pl-3 pt-0" >
                     <img :src="'https://urbanistica.comune.padova.it/dbtman/qs/?MAP=/dati/QC/99_SERVIZI/qc.qgs&service=WMS&request=GetLegendGraphic&layers=' + datasetItem.dataset" alt="">
                 </div>
             </div>

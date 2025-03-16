@@ -7,6 +7,8 @@ console.log(id)
 
 const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/dataset/' + id + '/');
 
+const rootPath = useRootPath();
+
 </script>
 
 <template>
@@ -21,11 +23,11 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
                         <div role="navigation" class="cmp-breadcrumbs">
                         <nav aria-label="breadcrumb" class="breadcrumb-container">
                             <ol data-element="breadcrumb" class="breadcrumb p-0">
-                            <li class="breadcrumb-item"><a href="/">Home</a><span class="separator">/</span></li>
+                            <li class="breadcrumb-item"><a :href="rootPath">Home</a><span class="separator">/</span></li>
                             <li class="breadcrumb-item">
                                 <!----><!---->
                             </li>
-                            <li class="breadcrumb-item"><a href="/catalogo">Catalogo</a><span class="separator">/</span></li>
+                            <li class="breadcrumb-item"><a :href="rootPath + 'catalogo'">Catalogo</a><span class="separator">/</span></li>
                             <li class="breadcrumb-item active">{{ id }}</li>
                             <!----><!----><!---->
                             </ol>
@@ -43,8 +45,13 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
                         <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
                             <h1 data-element="page-name" class="text-black">Dataset {{ id }}</h1>
                             <div class="hero-text">
-                                <p>{{ data.metadati_selection.Titolo }}</p>
-                                <p>Collocazione: {{ data.matrice }}/{{ data.tema }}</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">{{ data.metadati_selection.Titolo }}</li>
+                                    <li class="list-group-item">{{ data.metadati_selection.Descrizione }}</li>
+                                    <li class="list-group-item">Collocazione: {{ data.matrice }}/{{ data.tema }}</li>
+                                    <li v-if="data.aggiornamenti.length > 0" class="list-group-item">Aggiornamento: {{ data.aggiornamenti[0].causale }} del <a :href="'/aggiornamento/' + data.aggiornamenti[0].id">{{ data.aggiornamenti[0].data }}</a></li>
+                                    <li class="list-group-item">hash MD5: {{ data.hash_md5 }} </li>
+                                </ul>
                             </div>
                             <!---->
                         </div>
@@ -63,12 +70,25 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
                 <div class="col-12 col-lg-8  pb-lg-50">
 
                     <br/>
-                            <p>{{ data.metadati_selection.Descrizione }}</p>
-                            <p>{{ data.tipo }} in formato {{ data.estensione }}</p>
-                            <p>hash MD5: {{ data.hash_md5 }}</p>
-                            <datasetMap :ds="data"></datasetMap>
+
+                            
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Licenza d'uso: {{ data.licenza }}</li>
+                        <li class="list-group-item">                            
+
+                                
+                                <span  v-if="data.tipo == 'cartella'">Cartella di dati non strutturati </span>  
+                                <span  v-if="data.tipo == 'dati sciolti'">Dati strutturati in formato {{ data.estensione }} </span>  
+                                <span class="badge badge-warning pl-2 ml-2" style="background-color: #006242; margin-left:10px;" ><a style="color: white;" :href="'https://urbanistica.comune.padova.it/dbtman/qc/download/' + data.id.toString() + '/'">Download</a></span>
+
+                        </li>
+                        <li class="list-group-item">Servizio {{ data.tipo_servizio }} Online : {{ data.servizio }}</li>
+                        <li class="list-group-item"><datasetMap v-if="data.estensione == 'shp'" :ds="data"></datasetMap></li>
+
+                    </ul>
                     <!---->
-                            <h3><a :href="'https://urbanistica.comune.padova.it/dbtman/qc/download/' + data.id.toString() + '/'">Scarica i dati grezzi</a></h3>
+                            
                     <!---->
                 </div>
                 <div class="col-12 col-lg-4 pt-30 pt-lg-5 ps-lg-5 order-first order-md-last pb-lg-5">
@@ -90,3 +110,11 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
 
     </div>
 </template>
+
+<style scoped>
+scarica {
+  background-color: #006242 !important;
+  color: white;
+  padding-left: 15px;
+}
+</style>

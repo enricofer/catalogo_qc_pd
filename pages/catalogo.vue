@@ -5,6 +5,8 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
 
 const searchTerm = defineModel();
 
+const rootPath = useRootPath();
+
 const state = reactive({
     num_items: 0,
     itemPerPag: 20,
@@ -59,7 +61,7 @@ const found = reactive({
                         <div role="navigation" class="cmp-breadcrumbs">
                         <nav aria-label="breadcrumb" class="breadcrumb-container">
                             <ol data-element="breadcrumb" class="breadcrumb p-0">
-                            <li class="breadcrumb-item"><a href="/">Home</a><span class="separator">/</span></li>
+                            <li class="breadcrumb-item"><a :href="rootPath">Home</a><span class="separator">/</span></li>
                             <li class="breadcrumb-item">
                                 <!----><!---->
                             </li>
@@ -126,7 +128,7 @@ const found = reactive({
                     <h2 class="title-xsmall-semi-bold"><span>DATASET IN EVIDENZA</span></h2>
                     <ul class="link-list t-primary">
                         <li v-for="dsItem in data.trending" :key="dsItem.id" class="mb-3 mt-3">
-                                <a class="list-item ps-0 title-medium" :href="'/dataset/'+dsItem.dataset"><span>{{ dsItem.dataset }}</span></a>
+                                <a class="list-item ps-0 title-medium" :href="rootPath + 'dataset/'+dsItem.dataset"><span>{{ dsItem.dataset }}</span></a>
                         </li>
                         <!---->
                     </ul>
