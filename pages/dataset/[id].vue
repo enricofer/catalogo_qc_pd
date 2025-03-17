@@ -71,10 +71,8 @@ const rootPath = useRootPath();
 
                     <br/>
 
-                            
-
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Licenza d'uso: {{ data.licenza }}</li>
+                        <li class="list-group-item">Licenza d'uso: {{ data.metadati_selection['Licenza_d_uso_sigla'] }}</li>
                         <li class="list-group-item">                            
 
                                 
@@ -83,8 +81,10 @@ const rootPath = useRootPath();
                                 <span class="badge badge-warning pl-2 ml-2" style="background-color: #006242; margin-left:10px;" ><a style="color: white;" :href="'https://urbanistica.comune.padova.it/dbtman/qc/download/' + data.id.toString() + '/'">Download</a></span>
 
                         </li>
-                        <li class="list-group-item">Servizio {{ data.tipo_servizio }} Online : {{ data.servizio }}</li>
+                        <li class="list-group-item" v-if="data.metadati_selection['URL Servizio Online']" >Servizio {{ data.metadati_selection['Protocollo Servizio Online'] }} Online : {{ data.metadati_selection['URL Servizio Online'] }}</li>
                         <li class="list-group-item"><datasetMap v-if="data.estensione == 'shp'" :ds="data"></datasetMap></li>
+                        <li class="list-group-item"><tabularSample v-if="['xls','xlsx','ods','csv','dbf'].includes(data.estensione)" :features="data.info.layers[0].features"></tabularSample></li>
+                        <li class="list-group-item"><fileTable v-if="data.tipo == 'cartella'" :files="data.info.files"></fileTable></li>
 
                     </ul>
                     <!---->
