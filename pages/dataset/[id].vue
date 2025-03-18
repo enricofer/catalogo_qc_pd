@@ -46,8 +46,8 @@ const rootPath = useRootPath();
                             <h1 data-element="page-name" class="text-black">Dataset {{ id }}</h1>
                             <div class="hero-text">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">{{ data.metadati_selection.Titolo }}</li>
-                                    <li class="list-group-item">{{ data.metadati_selection.Descrizione }}</li>
+                                    <li class="list-group-item">{{ data.titolo }}</li>
+                                    <li class="list-group-item">{{ data.descrizione }}</li>
                                     <li class="list-group-item">Collocazione: {{ data.matrice }}/{{ data.tema }}</li>
                                     <li v-if="data.aggiornamenti.length > 0" class="list-group-item">Aggiornamento: {{ data.aggiornamenti[0].causale }} del <a :href="'/aggiornamento/' + data.aggiornamenti[0].id">{{ data.aggiornamenti[0].data }}</a></li>
                                     <li class="list-group-item">hash MD5: {{ data.hash_md5 }} </li>
@@ -69,9 +69,7 @@ const rootPath = useRootPath();
                 </div>
                 <div class="col-12 col-lg-8  pb-lg-50">
 
-                    <br/>
-
-                    <ul class="list-group list-group-flush">
+                    <ul v-if="!data.riservato" class="list-group list-group-flush">
                         <li class="list-group-item">Licenza d'uso: {{ data.metadati_selection['Licenza_d_uso_sigla'] }}</li>
                         <li class="list-group-item">                            
 
@@ -88,7 +86,7 @@ const rootPath = useRootPath();
 
                     </ul>
                     <!---->
-                            
+                    <p v-if="data.riservato">Dataset con limitazioni di accesso. Rivolgersi agli uffici per eventuale disponibilità</p>
                     <!---->
                 </div>
                 <div class="col-12 col-lg-4 pt-30 pt-lg-5 ps-lg-5 order-first order-md-last pb-lg-5">
