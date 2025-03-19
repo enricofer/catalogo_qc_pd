@@ -133,6 +133,57 @@ useHead({
     <main>
       <div class="app-layouts"><div class="app-page-layout"><NuxtPage/></div></div>
     </main>
+
+    <footer id="footer" class="it-footer">
+    <div  class="it-footer-main">
+      <div  class="container">
+          <div  class="row">
+            <div  class="col-md-9 mt-md-4 footer-items-wrapper">
+                <h3  class="footer-heading-title">Contatti</h3>
+                <div  class="row">
+                  <div  class="col-md-4">
+                      <div  class="footer-info">
+                        <p><strong>Comune di Padova</strong><br>Via del Municipio 1 - 35122 Padova<br>Codice fiscale e partita IVA: 00644060287</p>
+                        <p>&nbsp;</p>
+                        <p><a href="/guida-al-sito" data-element="contacts">Guida al sito</a></p>
+                      </div>
+                  </div>
+                  <!----><!---->
+                  <div  class="col-md-4">
+                      <div  class="footer-info">
+                        <p><a href="/domande-frequenti" data-element="faq">Leggi le domande frequenti</a></p>
+                        <p><a href="https://cup.comune.padova.it/" data-element="appointment-booking">Prenota appuntamento</a></p>
+                        <p><a href="https://padovapartecipa.it/" data-element="report-inefficiency">Segnala disservizio</a></p>
+                        <p><a href="https://myarea.comune.padova.it/myportal/C_G224_RV/servizi/richiesta-assistenza" data-element="contacts">Richiedi assistenza</a></p>
+                      </div>
+                  </div>
+                  <!----><!---->
+                  <div  class="col-md-4">
+                      <div  class="footer-info">
+                        <p><a href="/amministrazione-trasparente" data-element="contacts">Amministrazione trasparente</a></p>
+                        <p><a href="/informativa-il-trattamento-dei-dati-personali" data-element="privacy-policy-link">Privacy</a></p>
+                        <p><a href="/note-legali-del-sito-del-comune-di-padova" data-element="legal-notes">Note legali</a></p>
+                        <p><a href="https://form.agid.gov.it/view/f2c66ec0-7be6-11ef-84cc-23cabefe6f3b" data-element="accessibility-link">Dichiarazione di accessibilità</a></p>
+                      </div>
+                  </div>
+                  <!----><!---->
+                </div>
+            </div>
+            <div  class="col-md-3 mt-md-4 footer-items-wrapper">
+                <h3  class="footer-heading-title">Seguici su</h3>
+                <ul  class="list-inline text-start social">
+                </ul>
+            </div>
+          </div>
+          <div  class="row">
+            <div  class="col-12 footer-items-wrapper">
+                <div  class="footer-bottom"><a  href="/cookie-preferences" class="ccb__edit">Personalizza i cookie</a><a  href="/sitemap" class="" data-focus-mouse="false">Mappa sito</a></div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </footer>
+    
   </div>
 </template>
 

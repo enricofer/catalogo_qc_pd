@@ -6,6 +6,9 @@ export default defineNuxtConfig({
       host: '0.0.0.0',
       port: 3000
   },
-  modules: ['usebootstrap']
+  modules: ['usebootstrap'],
+  app: {
+    baseURL: '/dbtman/pub/'
+  }
   //modules: ['vuetify-nuxt-module']
 })

@@ -7,6 +7,8 @@ console.log(id)
 
 const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/var/' + id + '/');
 
+const rootPath = useRootPath();
+
 </script>
 
 <template>
@@ -25,7 +27,7 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
                             <li class="breadcrumb-item">
                                 <!----><!---->
                             </li>
-                            <li class="breadcrumb-item"><a href="/aggiornamenti">Aggiornamenti</a><span class="separator">/</span></li>
+                            <li class="breadcrumb-item"><a :href="rootPath + 'aggiornamenti'">Aggiornamenti</a><span class="separator">/</span></li>
                             <li class="breadcrumb-item active">{{ data.data }}</li>
                             <!----><!----><!---->
                             </ol>

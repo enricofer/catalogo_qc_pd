@@ -1,5 +1,5 @@
-<template>
-    <div>
-        <h2>welcome</h2>
-    </div>
-</template>
+<script lang="ts" setup>
+
+await navigateTo('/catalogo/')
+
+</script>

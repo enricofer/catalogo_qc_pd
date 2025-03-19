@@ -9,6 +9,15 @@ const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/
 
 const rootPath = useRootPath();
 
+const licenza_link = function(licenza) {
+    switch (licenza) {
+        case "IODL v2.0":
+            return "https://www.dati.gov.it/content/italian-open-data-license-v20";
+        case "IODL v1.0":
+            return "https://opendefinition.org/licenses-md/inreview/IODL-1.0/";
+    }
+}
+
 </script>
 
 <template>
@@ -49,7 +58,7 @@ const rootPath = useRootPath();
                                     <li class="list-group-item">{{ data.titolo }}</li>
                                     <li class="list-group-item">{{ data.descrizione }}</li>
                                     <li class="list-group-item">Collocazione: {{ data.matrice }}/{{ data.tema }}</li>
-                                    <li v-if="data.aggiornamenti.length > 0" class="list-group-item">Aggiornamento: {{ data.aggiornamenti[0].causale }} del <a :href="'/aggiornamento/' + data.aggiornamenti[0].id">{{ data.aggiornamenti[0].data }}</a></li>
+                                    <li v-if="data.aggiornamenti.length > 0" class="list-group-item">Aggiornamento: {{ data.aggiornamenti[0].causale }} del <a :href="rootPath +'aggiornamento/' + data.aggiornamenti[0].id">{{ data.aggiornamenti[0].data }}</a></li>
                                     <li class="list-group-item">hash MD5: {{ data.hash_md5 }} </li>
                                 </ul>
                             </div>
@@ -69,20 +78,23 @@ const rootPath = useRootPath();
                 </div>
                 <div class="col-12 col-lg-8  pb-lg-50">
 
-                    <ul v-if="!data.riservato" class="list-group list-group-flush">
-                        <li class="list-group-item">Licenza d'uso: {{ data.metadati_selection['Licenza_d_uso_sigla'] }}</li>
-                        <li class="list-group-item">                            
 
-                                
+                    <ul  v-if="!data.riservato" class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            Licenza d'uso: 
+                            <a :href="licenza_link(data.metadati_selection['Licenza_d_uso_sigla'])" target="_blank">
+                                {{ data.metadati_selection['Licenza_d_uso_sigla'] }}
+                            </a>
+                        </li>
+                        <li class="list-group-item">             
                                 <span  v-if="data.tipo == 'cartella'">Cartella di dati non strutturati </span>  
-                                <span  v-if="data.tipo == 'dati sciolti'">Dati strutturati in formato {{ data.estensione }} </span>  
+                                <span  v-if="data.tipo == 'dati sciolti'">Dati in formato {{ data.estensione }} </span>  
                                 <span class="badge badge-warning pl-2 ml-2" style="background-color: #006242; margin-left:10px;" ><a style="color: white;" :href="'https://urbanistica.comune.padova.it/dbtman/qc/download/' + data.id.toString() + '/'">Download</a></span>
-
                         </li>
                         <li class="list-group-item" v-if="data.metadati_selection['URL Servizio Online']" >Servizio {{ data.metadati_selection['Protocollo Servizio Online'] }} Online : {{ data.metadati_selection['URL Servizio Online'] }}</li>
-                        <li class="list-group-item"><datasetMap v-if="data.estensione == 'shp'" :ds="data"></datasetMap></li>
-                        <li class="list-group-item"><tabularSample v-if="['xls','xlsx','ods','csv','dbf'].includes(data.estensione)" :features="data.info.layers[0].features"></tabularSample></li>
-                        <li class="list-group-item"><fileTable v-if="data.tipo == 'cartella'" :files="data.info.files"></fileTable></li>
+                        <li class="list-group-item" v-if="data.estensione == 'shp'"><datasetMap :ds="data"></datasetMap></li>
+                        <li class="list-group-item" v-if="['xls','xlsx','ods','csv','dbf'].includes(data.estensione)"><tabularSample :features="data.info.layers[0].features"></tabularSample></li>
+                        <li class="list-group-item" v-if="data.tipo == 'cartella'" ><fileTable :files="data.info.files"></fileTable></li>
 
                     </ul>
                     <!---->
@@ -94,7 +106,7 @@ const rootPath = useRootPath();
                     <h2 class="title-small-semi-bold"><span>AGGIORNAMENTI DEL DATASET</span></h2>
                     <ul class="link-list t-primary">
                         <li v-for="(agg, index) in data.aggiornamenti" :key="agg.id" class="mb-3 mt-3">
-                            <a class="list-item ps-0 title-medium" :href="'/aggiornamento/' + agg.id.toString() +'/'" ><span>{{ agg.data }} {{ agg.causale }}</span></a>
+                            <a class="list-item ps-0 title-medium" :href="rootPath +'aggiornamento/' + agg.id.toString() +'/'" ><span>{{ agg.data }} {{ agg.causale }}</span></a>
                         </li>
 
                         <!---->
