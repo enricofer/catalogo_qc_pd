@@ -9,6 +9,8 @@ export default defineNuxtConfig({
   modules: ['usebootstrap'],
   app: {
     baseURL: '/dbtman/pub/'
-  }
+  },
+  css: ['~/assets/bifonts.css', '~/assets/styles.css'],
+  ssr: true
   //modules: ['vuetify-nuxt-module']
 })
