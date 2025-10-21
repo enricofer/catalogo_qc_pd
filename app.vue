@@ -19,8 +19,8 @@ useHead({
       { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.woff", as: "font", type: "font/woff", crossorigin: "anonymous" },
       { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
 
-      { rel: "stylesheet", href: "/bifonts.css"},
-      { rel: "stylesheet", href: "/styles.css"},
+      //{ rel: "stylesheet", href: "~/assets/bifonts.css"},
+      //{ rel: "stylesheet", href: "~/assets/styles.css"},
     ],
 })
 </script>
