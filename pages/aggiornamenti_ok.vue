@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import { ref, reactive } from 'vue';
 
-const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/var/');
+const baseAPI = config.public.rapperProxy // see nuxt.config.ts
+const { data } = await useFetch(baseAPI + 'qc/var/');
 
 const searchTerm = defineModel();
 

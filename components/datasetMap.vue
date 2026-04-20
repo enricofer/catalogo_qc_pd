@@ -12,7 +12,8 @@ import TileWMS from 'ol/source/TileWMS.js';
 import { ref, useTemplateRef, onMounted, reactive } from 'vue'
 
 const datasetItem = useAttrs().ds;
-
+const config = useRuntimeConfig()
+const baseAPI = config.public.rapperProxy // see nuxt.config.ts
 const queryResult = reactive({
     features: []
 })
@@ -32,7 +33,7 @@ onMounted(async () => {
         visible: true,
         //type: 'base',
         source: new TileWMS({
-            url: 'https://urbanistica.comune.padova.it/dbtman/qs/?MAP=/dati/QC/99_SERVIZI/qc.qgs',
+            url: baseAPI + 'qs/?MAP=/dati/QC/99_SERVIZI/qc.qgs',
             projection: 'EPSG:3003',
             params: {layers: datasetItem.dataset,format:'image/png',CRS:'EPSG:3003'}
         })
@@ -100,7 +101,7 @@ onMounted(async () => {
             <div class="row">
                 <div id="mapa" ref="mapElementRef" class="col-8 p-0" style="height: 600px;background-color: rgb(235, 238, 240);"></div>
                 <div id="legenda" ref="legendElementRef" class="col-3 pl-3 pt-0" >
-                    <img :src="'https://urbanistica.comune.padova.it/dbtman/qs/?MAP=/dati/QC/99_SERVIZI/qc.qgs&service=WMS&request=GetLegendGraphic&layers=' + datasetItem.dataset" alt="">
+                    <img :src="baseAPI + 'qs/?MAP=/dati/QC/99_SERVIZI/qc.qgs&service=WMS&request=GetLegendGraphic&layers=' + datasetItem.dataset" alt="">
                 </div>
             </div>
         </div>

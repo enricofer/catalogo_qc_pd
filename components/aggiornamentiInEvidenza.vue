@@ -1,7 +1,9 @@
 <script lang="ts" setup>
-    const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/var/');
+    const config = useRuntimeConfig()
+    const baseAPI = config.public.rapperProxy // see nuxt.config.ts
+    const { data } = await useFetch(baseAPI + 'qc/var/');
     const inEvidenza = computed(() => { return data.value.result.slice(0,3) })
-    const rootPath = useRootPath();
+    const rootPath = config.app.baseURL
 </script>
 
 <template>

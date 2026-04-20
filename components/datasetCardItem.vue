@@ -2,7 +2,8 @@
 
 const datasetItem = useAttrs().ds
 
-const rootPath = useRootPath();
+const config = useRuntimeConfig()
+const rootPath = config.app.baseURL
 
 </script>
 

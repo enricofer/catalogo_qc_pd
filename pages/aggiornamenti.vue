@@ -1,13 +1,16 @@
 <script lang="ts" setup>
 import { ref, reactive } from 'vue';
 
-const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/var/');
+const config = useRuntimeConfig()
+const baseAPI = config.public.rapperProxy // see nuxt.config.ts
+
+const { data } = await useFetch(baseAPI + 'qc/var/');
 
 const inEvidenza = computed(() => { return data.value.result.slice(0,3) })
 
 const searchTerm = defineModel();
 
-const rootPath = useRootPath();
+const rootPath = config.app.baseURL
 
 const state = reactive({
     num_items: 0,
@@ -71,26 +74,24 @@ const sfoglia = (step) => {
 
         <div class="container">
 
-            <div id="main-container" class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-10">
-                        <div role="navigation" class="cmp-breadcrumbs">
-                        <nav aria-label="breadcrumb" class="breadcrumb-container">
-                            <ol data-element="breadcrumb" class="breadcrumb p-0">
-                            <li class="breadcrumb-item"><a :href="rootPath">Home</a><span class="separator">/</span></li>
-                            <li class="breadcrumb-item">
-                                <!----><!---->
-                            </li>
-                            <li class="breadcrumb-item active">Aggiornamenti</li>
-                            <!----><!----><!---->
-                            </ol>
-                        </nav>
-                        </div>
+            <div class="row ">
+                <div class="col-12 col-lg-10">
+                    <div role="navigation" class="cmp-breadcrumbs">
+                    <nav aria-label="breadcrumb" class="breadcrumb-container">
+                        <ol data-element="breadcrumb" class="breadcrumb p-0">
+                        <li class="breadcrumb-item"><a :href="rootPath">Home</a><span class="separator">/</span></li>
+                        <li class="breadcrumb-item">
+                            <!----><!---->
+                        </li>
+                        <li class="breadcrumb-item active">Aggiornamenti</li>
+                        <!----><!----><!---->
+                        </ol>
+                    </nav>
                     </div>
                 </div>
             </div>
 
-            <div class="row justify-content-center row-shadow">
+            <div class="row row-shadow">
                 <div class="col-12 col-lg-10">
                 <div class="cmp-hero">
                     <section class="it-hero-wrapper bg-white align-items-start">

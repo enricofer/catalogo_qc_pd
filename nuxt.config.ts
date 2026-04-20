@@ -8,9 +8,14 @@ export default defineNuxtConfig({
   },
   modules: ['usebootstrap'],
   app: {
-    baseURL: '/dbtman/pub/'
+    //baseURL: '/dbtman/pub/',
+    baseURL: '/pianificazione/',
   },
   css: ['~/assets/bifonts.css', '~/assets/styles.css'],
-  ssr: true
-  //modules: ['vuetify-nuxt-module']
+  runtimeConfig: {
+    public: {
+      rapperProxy: 'https://urbanistica.comune.padova.it/dbtman/',
+      downloadHelper: 'https://urbanistica.comune.padova.it/dbtman/documenti/?target=',
+    }
+  }
 })

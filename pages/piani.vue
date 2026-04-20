@@ -2,9 +2,11 @@
 import { ref, reactive } from 'vue';
 
 const config = useRuntimeConfig()
-const baseAPI = config.public.rapperProxy // see nuxt.config.ts
+const baseAPI = config.public.rapperProxy
 
-const { data } = await useFetch(baseAPI + 'qc/dataset/');
+const { data } = await useFetch(baseAPI + 'piano/?tipologia__in=PI;PAT');
+
+// console.log("data trending",data.value.trending)
 
 const searchTerm = defineModel();
 
@@ -21,11 +23,12 @@ const state = reactive({
 const filterItems = (filter: string) => {
     
     const items = [];
-    data.value.result.forEach(function (item, index) {
+    data.value.piani.forEach(function (item, index) {
         if (
             filter == "" || 
-            item.dataset.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
-            item.descrizione.toLowerCase().includes(searchTerm.value.toLowerCase())
+            item.id_pua.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
+            item.denominazione.toLowerCase().includes(searchTerm.value.toLowerCase()) ||
+            item.ditta.toLowerCase().includes(searchTerm.value.toLowerCase())
         ) {
             items.push(item);
         };
@@ -67,7 +70,7 @@ const found = reactive({
                             <li class="breadcrumb-item">
                                 <!----><!---->
                             </li>
-                            <li class="breadcrumb-item active">Catalogo</li>
+                            <li class="breadcrumb-item active">Attività di Pianificazione</li>
                             <!----><!----><!---->
                             </ol>
                         </nav>
@@ -80,9 +83,9 @@ const found = reactive({
                 <div class="cmp-hero">
                     <section class="it-hero-wrapper bg-white align-items-start">
                         <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
-                            <h1 data-element="page-name" class="text-black">Catalogo dei dati territoriali</h1>
+                            <h1 data-element="page-name" class="text-black">Archivio della Pianificazione Generale</h1>
                             <div class="hero-text">
-                            <p>Quadro conoscitivo ai sensi della L.R. 11/2004.</p>
+                            <p>Varianti al Piano degli Interventi</p>
                             <!--<small>Quadro conoscitivo ai sensi della L.R. 11/2004.</small>-->
                             </div>
                             <!---->
@@ -97,7 +100,7 @@ const found = reactive({
             <div class="container">
                 <div class="row">
                 <div class="col-12">
-                    <h2 class="title-xxlarge mb-4 mt-5 mb-lg-10"> Esplora tutti i dataset </h2>
+                    <h2 class="title-xxlarge mb-4 mt-5 mb-lg-10"> Esplora tutti i piani </h2>
                 </div>
                 <div class="col-12 col-lg-8 pt-lg-20 pb-lg-20">
                     <div class="cmp-input-search">
@@ -115,10 +118,10 @@ const found = reactive({
                     </div>
                     <!---->   
 
-                    <PaginazioneControl @click="search" :state="state" :msg="'dataset trovati in ordine alfabetico'"></PaginazioneControl>    
+                    <PaginazioneControl @click="search" :state="state" :msg="'piani trovati in ordine alfabetico'"></PaginazioneControl>    
                     
-                    <div v-for="(dsItem, index) in found.items" :key="dsItem.id" class="app-card" dataelement="service-link">
-                        <datasetItem :ds="dsItem"></DatasetItem>
+                    <div v-for="(pItem, index) in found.items" :key="pItem.id_pua" class="app-card" dataelement="service-link">
+                        <pianoItem :dett="pItem"></pianoItem>
                     </div>
 
                     <PaginazioneControl @click="search" :state="state"></PaginazioneControl>
@@ -126,12 +129,13 @@ const found = reactive({
                 </div>
                 <div class="col-12 col-lg-4 pt-30 pt-lg-5 ps-lg-5 order-first order-md-last pb-lg-5">
                     <div class="link-list-wrap">
-                    <h2 class="title-xsmall-semi-bold"><span>DATASET IN EVIDENZA</span></h2>
+                    <h2 class="title-xsmall-semi-bold"><span>PIANI IN EVIDENZA</span></h2>
                     <ul class="link-list t-primary">
-                        <li v-for="dsItem in data.trending" :key="dsItem.id" class="mb-3 mt-3">
-                                <a class="list-item ps-0 title-medium" :href="rootPath + 'dataset/'+dsItem.dataset"><span>{{ dsItem.dataset }}</span></a>
+                        <!--
+                        <li v-for="item in data.value.trending" :key="item.id" class="mb-3 mt-3">
+                                <a class="list-item ps-0 title-medium" :href="rootPath + 'piano/'+item.pua.id_pua"><span>{{ item.pua.id_pua }} {{ item.pua.denominazione }}</span></a>
                         </li>
-                        <!---->
+                        -->
                     </ul>
                     <!----><!---->
                     </div>

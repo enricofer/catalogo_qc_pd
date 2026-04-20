@@ -3,11 +3,14 @@
 
 const { id } = useRoute().params;
 
-console.log(id)
+const config = useRuntimeConfig()
+const baseAPI = config.public.rapperProxy // see nuxt.config.ts
 
-const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/dataset/' + id + '/');
+const { data } = await useFetch(baseAPI + 'qc/dataset/' + id + '/');
 
-const rootPath = useRootPath();
+const rootPath = config.app.baseURL
+
+console.log(data);
 
 const licenza_link = function(licenza) {
     switch (licenza) {
@@ -89,7 +92,7 @@ const licenza_link = function(licenza) {
                         <li class="list-group-item">             
                                 <span  v-if="data.tipo == 'cartella'">Cartella di dati non strutturati </span>  
                                 <span  v-if="data.tipo == 'dati sciolti'">Dati in formato {{ data.estensione }} </span>  
-                                <span class="badge badge-warning pl-2 ml-2" style="background-color: #006242; margin-left:10px;" ><a style="color: white;" :href="'https://urbanistica.comune.padova.it/dbtman/qc/download/' + data.id.toString() + '/'">Download</a></span>
+                                <span class="badge badge-warning pl-2 ml-2" style="background-color: #006242; margin-left:10px;" ><a style="color: white;" :href="baseAPI + 'qc/download/' + data.id.toString() + '/'">Download</a></span>
                         </li>
                         <li class="list-group-item" v-if="data.metadati_selection['URL Servizio Online']" >Servizio {{ data.metadati_selection['Protocollo Servizio Online'] }} Online : {{ data.metadati_selection['URL Servizio Online'] }}</li>
                         <li class="list-group-item" v-if="data.estensione == 'shp'"><datasetMap :ds="data"></datasetMap></li>

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 
 const aggItem = useAttrs().var
-
-const rootPath = useRootPath();
+const config = useRuntimeConfig()
+const rootPath = config.app.baseURL
 
 </script>
 

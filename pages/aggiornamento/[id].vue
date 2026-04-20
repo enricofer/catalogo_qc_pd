@@ -3,11 +3,12 @@
 
 const { id } = useRoute().params;
 
-console.log(id)
+const config = useRuntimeConfig()
+const baseAPI = config.public.rapperProxy // see nuxt.config.ts
 
-const { data } = await useFetch('https://urbanistica.comune.padova.it/dbtman/qc/var/' + id + '/');
+const { data } = await useFetch(baseAPI + 'qc/var/' + id + '/');
 
-const rootPath = useRootPath();
+const rootPath = config.app.baseURL
 
 </script>
 
