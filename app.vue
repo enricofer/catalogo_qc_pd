@@ -52,9 +52,9 @@ useHead({
                 <div class="it-header-center-content-wrapper">
                   <div class="it-brand-wrapper">
                       <a href="homepage.html" title="Vai alla homepage">
-                        <svg width="82" height="82" class="icon" aria-hidden="true">
-                          <image xlink:href="/logo.svg"></image>
-                        </svg>
+
+                        <img class="icon" src="/logo.svg" alt="logo">
+
                         <div class="it-brand-text">
                           <div class="it-brand-title">Comune di Padova</div>
                           <div class="it-brand-tagline d-none d-md-block">Settore Urbanistica e Servizi catastali</div>
@@ -106,6 +106,9 @@ useHead({
                           </li>
                           <li class="nav-item">
                               <NuxtLink class="main-nav-link nav-link text-truncate" to="/aggiornamenti"><span>Aggiornamenti</span></NuxtLink>
+                          </li>
+                          <li class="nav-item">
+                              <NuxtLink class="main-nav-link nav-link text-truncate" to="/norme"><span>Norme</span></NuxtLink>
                           </li>
                           <li class="nav-item">
                               <NuxtLink class="main-nav-link nav-link text-truncate" to="/piani"><span>Pianificazione Generale</span></NuxtLink>
