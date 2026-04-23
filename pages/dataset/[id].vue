@@ -97,7 +97,7 @@ const licenza_link = function(licenza) {
                         <li class="list-group-item" v-if="data.metadati_selection['URL Servizio Online']" >Servizio {{ data.metadati_selection['Protocollo Servizio Online'] }} Online : {{ data.metadati_selection['URL Servizio Online'] }}</li>
                         <li class="list-group-item" v-if="data.estensione == 'shp'"><datasetMap :ds="data"></datasetMap></li>
                         <li class="list-group-item" v-if="['xls','xlsx','ods','csv','dbf'].includes(data.estensione)"><tabularSample :features="data.info.layers[0].features"></tabularSample></li>
-                        <li class="list-group-item" v-if="data.tipo == 'cartella'" ><fileTable :files="data.info.files"></fileTable></li>
+                        <li class="list-group-item" v-if="data.tipo == 'cartella'" ><fileTable :files="data.info.files" :base="baseAPI + 'qc/download/' + data.id.toString() + '/'"></fileTable></li>
 
                     </ul>
                     <!---->
