@@ -16,6 +16,10 @@ export default defineNuxtConfig({
     public: {
       rapperProxy: 'https://urbanistica.comune.padova.it/dbtman/',
       downloadHelper: 'https://urbanistica.comune.padova.it/dbtman/documenti/?target=',
+      //rapperProxy: 'https://rapper.comune.padova.it/dbtman/',
+      //downloadHelper: 'https://rapper.comune.padova.it/dbtman/documenti/?target=',
+      //rapperProxy: 'http://10.10.21.50:1338/dbtman/',
+      //downloadHelper: 'http://10.10.21.50:1338/dbtman/documenti/?target=',
     }
   }
 })

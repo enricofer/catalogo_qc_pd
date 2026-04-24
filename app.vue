@@ -108,9 +108,6 @@ useHead({
                               <NuxtLink class="main-nav-link nav-link text-truncate" to="/aggiornamenti"><span>Aggiornamenti</span></NuxtLink>
                           </li>
                           <li class="nav-item">
-                              <NuxtLink class="main-nav-link nav-link text-truncate" to="/norme"><span>Norme</span></NuxtLink>
-                          </li>
-                          <li class="nav-item">
                               <NuxtLink class="main-nav-link nav-link text-truncate" to="/piani"><span>Pianificazione Generale</span></NuxtLink>
                           </li>
                           <li class="nav-item">
@@ -118,6 +115,9 @@ useHead({
                           </li>
                           <li class="nav-item">
                               <NuxtLink class="main-nav-link nav-link text-truncate" to="/iterapp"><span>Iter di approvazione</span></NuxtLink>
+                          </li>
+                          <li class="nav-item">
+                              <NuxtLink class="main-nav-link nav-link text-truncate" to="https://urbanistica.comune.padova.it/norme/"><span>Norme</span></NuxtLink>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="../placeholder" data-element="live">
