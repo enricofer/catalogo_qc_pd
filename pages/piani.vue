@@ -5,8 +5,9 @@ const config = useRuntimeConfig()
 const baseAPI = config.public.rapperProxy
 
 const { data } = await useFetch(baseAPI + 'piano/?tipologia__in=PI;PAT');
+//const { data } = await useFetch(baseAPI + 'piano/?tipologia=PI');
 
-// console.log("data trending",data.value.trending)
+//console.log("data trending",data)
 
 const searchTerm = defineModel();
 
@@ -129,13 +130,13 @@ const found = reactive({
                 </div>
                 <div class="col-12 col-lg-4 pt-30 pt-lg-5 ps-lg-5 order-first order-md-last pb-lg-5">
                     <div class="link-list-wrap">
-                    <h2 class="title-xsmall-semi-bold"><span>PIANI IN EVIDENZA</span></h2>
+                    <h2 class="title-xsmall-semi-bold"><span>PIANI e VARIANTI IN EVIDENZA</span></h2>
                     <ul class="link-list t-primary">
-                        <!--
-                        <li v-for="item in data.value.trending" :key="item.id" class="mb-3 mt-3">
+                        
+                        <li v-for="item in data.trending" :key="item.id" class="mb-3 mt-3">
                                 <a class="list-item ps-0 title-medium" :href="rootPath + 'piano/'+item.pua.id_pua"><span>{{ item.pua.id_pua }} {{ item.pua.denominazione }}</span></a>
                         </li>
-                        -->
+                        <!-- -->
                     </ul>
                     <!----><!---->
                     </div>
