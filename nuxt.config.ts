@@ -6,6 +6,9 @@ export default defineNuxtConfig({
       host: '0.0.0.0',
       port: 3000
   },
+  routeRules: {
+    '/**': { cors: true }
+  },
   modules: ['usebootstrap'],
   app: {
     //baseURL: '/dbtman/pub/',
@@ -14,8 +17,10 @@ export default defineNuxtConfig({
   css: ['~/assets/bifonts.css', '~/assets/styles.css'],
   runtimeConfig: {
     public: {
-      rapperProxy: 'https://urbanistica.comune.padova.it/dbtman/',
+      //rapperProxy: 'https://urbanistica.comune.padova.it/dbtman/',
       downloadHelper: 'https://urbanistica.comune.padova.it/dbtman/documenti/?target=',
+      
+      rapperProxy: 'https://rapper.comune.padova.it/proxy/',
       //rapperProxy: 'https://rapper.comune.padova.it/dbtman/',
       //downloadHelper: 'https://rapper.comune.padova.it/dbtman/documenti/?target=',
       //rapperProxy: 'http://10.10.21.50:1338/dbtman/',
