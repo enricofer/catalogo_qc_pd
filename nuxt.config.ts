@@ -14,7 +14,13 @@ export default defineNuxtConfig({
     //baseURL: '/dbtman/pub/',
     baseURL: '/pianificazione/',
   },
-  css: ['~/assets/bifonts.css', '~/assets/styles.css'],
+  css: [
+    '~/assets/bifonts.css',
+    '~/public/bootstrap-italia/css/bootstrap-italia.min.css',
+    '~/assets/styles.css',
+    //'~/assets/font-override.css',
+    //'bootstrap-italia/dist/css/bootstrap-italia.min.css'
+  ],
   runtimeConfig: {
     public: {
       rapperProxy: 'https://urbanistica.comune.padova.it/dbtman/',

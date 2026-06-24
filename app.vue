@@ -1,26 +1,32 @@
 <script lang="ts" setup>
-useHead({
-    link: [ 
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Lora/lora-v20-latin-ext_latin-regular.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.woff", as: "font", type: "font/woff", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.woff", as: "font", type: "font/woff", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.woff", as: "font", type: "font/woff", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.woff", as: "font", type: "font/woff", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.woff", as: "font", type: "font/woff", crossorigin: "anonymous" },
-      { rel: "preload", href: "/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
 
-      //{ rel: "stylesheet", href: "~/assets/bifonts.css"},
-      //{ rel: "stylesheet", href: "~/assets/styles.css"},
+useHead({
+    script: [
+      {
+        src: '/pianificazione/bootstrap-italia/js/bootstrap-italia.bundle.min.js',
+        defer: true,
+        tagPosition: 'bodyClose'
+      }
+    ],
+    link: [ 
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Lora/lora-v20-latin-ext_latin-regular.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.woff", as: "font", type: "font/woff", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-300.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.woff", as: "font", type: "font/woff", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-italic.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.woff", as: "font", type: "font/woff", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.woff", as: "font", type: "font/woff", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.woff", as: "font", type: "font/woff", crossorigin: "anonymous" },
+      { rel: "preload", href: "/pianificazione/bootstrap-italia/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700italic.ttf", as: "font", type: "font/ttf", crossorigin: "anonymous" },
+      
     ],
 })
 </script>
@@ -51,7 +57,7 @@ useHead({
               <div class="col-12">
                 <div class="it-header-center-content-wrapper">
                   <div class="it-brand-wrapper">
-                      <a href="homepage.html" title="Vai alla homepage">
+                      <a href="https://www.comune.padova.it/" title="Vai alla homepage">
 
                         <img class="icon" src="/logo.svg" alt="logo">
 
@@ -102,35 +108,42 @@ useHead({
                       <nav aria-label="Principale">
                         <ul class="navbar-nav" data-element="main-navigation">
                           <li class="nav-item">
-                              <NuxtLink class="main-nav-link nav-link text-truncate" to="/catalogo"><span>Catalogo</span></NuxtLink>
+                              <NuxtLink :prefetch="false" class="main-nav-link nav-link text-truncate" to="/catalogo"><span>Catalogo</span></NuxtLink>
                           </li>
                           <li class="nav-item">
-                              <NuxtLink class="main-nav-link nav-link text-truncate" to="/aggiornamenti"><span>Aggiornamenti</span></NuxtLink>
+                              <NuxtLink :prefetch="false" class="main-nav-link nav-link text-truncate" to="/aggiornamenti"><span>Aggiornamenti</span></NuxtLink>
                           </li>
                           <li class="nav-item">
-                              <NuxtLink class="main-nav-link nav-link text-truncate" to="/piani"><span>Pianificazione Generale</span></NuxtLink>
+                              <NuxtLink :prefetch="false" class="main-nav-link nav-link text-truncate" to="/piani"><span>Pianificazione Generale</span></NuxtLink>
                           </li>
                           <li class="nav-item">
-                              <NuxtLink class="main-nav-link nav-link text-truncate" to="/pua"><span>Pianificazione Attuativa</span></NuxtLink>
+                              <NuxtLink :prefetch="false" class="main-nav-link nav-link text-truncate" to="/pua"><span>Pianificazione Attuativa</span></NuxtLink>
                           </li>
                           <li class="nav-item">
-                              <NuxtLink class="main-nav-link nav-link text-truncate" to="/iterapp"><span>Iter di approvazione</span></NuxtLink>
+                              <NuxtLink :prefetch="false" class="main-nav-link nav-link text-truncate" to="/iterapp"><span>Iter di approvazione</span></NuxtLink>
                           </li>
                           <li class="nav-item">
-                              <NuxtLink class="main-nav-link nav-link text-truncate" to="https://urbanistica.comune.padova.it/norme/"><span>Norme</span></NuxtLink>
+                              <NuxtLink :prefetch="false" class="main-nav-link nav-link text-truncate" to="https://urbanistica.comune.padova.it/norme/"><span>Norme</span></NuxtLink>
                           </li>
+                          <li class="nav-item">
+                              <NuxtLink :prefetch="false" class="main-nav-link nav-link text-truncate" to="/dbtman/prod/"><span>DBT manager</span></NuxtLink>
+                          </li>
+                          <!--
                           <li class="nav-item">
                             <a class="nav-link" href="../placeholder" data-element="live">
                               <span></span>
                             </a>
                           </li>
+                          -->
                         </ul>
                       </nav>
                       <nav aria-label="Secondaria">
                         <ul class="navbar-nav navbar-secondary">
+                          <!--
                           <li class="nav-item">
                             <a class="nav-link" href="../sito/placeholder.html"></a>
                           </li>
+                          -->
                         </ul>
                       </nav>
                     </div>
