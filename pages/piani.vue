@@ -119,7 +119,7 @@ const found = reactive({
                     </div>
                     <!---->   
 
-                    <PaginazioneControl @click="search" :state="state" :msg="'piani trovati in ordine alfabetico'"></PaginazioneControl>    
+                    <PaginazioneControl @click="search" :state="state" :msg="'piani trovati in ordine cronologico'"></PaginazioneControl>    
                     
                     <div v-for="(pItem, index) in found.items" :key="pItem.id_pua" class="app-card" dataelement="service-link">
                         <pianoItem :dett="pItem"></pianoItem>
@@ -134,7 +134,7 @@ const found = reactive({
                     <ul class="link-list t-primary">
                         
                         <li v-for="item in data.trending" :key="item.id" class="mb-3 mt-3">
-                                <a class="list-item ps-0 title-medium" :href="rootPath + 'piano/'+item.pua.id_pua"><span>{{ item.pua.id_pua }} {{ item.pua.denominazione }}</span></a>
+                                <a class="list-item ps-0 title-medium" :href="rootPath + 'piano/'+item.pua.id_pua"><span>{{ item.pua.denominazione }}</span></a>
                         </li>
                         <!-- -->
                     </ul>

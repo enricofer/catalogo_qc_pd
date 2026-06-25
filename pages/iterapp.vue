@@ -131,7 +131,7 @@ const found = reactive({
                     <h2 class="title-xsmall-semi-bold"><span>PIANI IN EVIDENZA</span></h2>
                     <ul class="link-list t-primary">
                         <li v-for="item in data.pubblicazioni.slice(0,10)" :key="item.id" class="mb-3 mt-3">
-                                <a class="list-item ps-0 title-medium" :href="rootPath + 'piano/'+item.id_pua"><span>{{ item.id_pua }} {{ item.denominazione }}</span></a>
+                                <a class="list-item ps-0 title-medium" :href="rootPath + 'piano/'+item.id_pua"><span>{{ item.denominazione }}</span></a>
                         </li>
                         <!---->
                     </ul>

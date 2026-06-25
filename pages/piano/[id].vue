@@ -55,10 +55,11 @@ const licenza_link = function(licenza) {
                     <section class="bg-white align-items-start">
                         <div class="pt-0 ps-0 pb-4 pb-lg-60">
                             <h1 data-element="page-name" class="text-black">{{ data.tipologia_display }}</h1>
-                            <h2 data-element="page-name" class="text-black">{{ data.sottocategoria_display }} {{ data.id_pua }}</h2>
+                            <h2 data-element="page-name" class="text-black">{{ data.sottocategoria_display }}</h2>
+                            <h2 data-element="page-name" class="text-black">{{ data.denominazione }}</h2>
                             <div class="hero-text">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">{{ data.denominazione }}</li>
+                                    <li class="list-group-item">denominazione d'archivio: {{ data.id_pua }}</li>
                                     <li class="list-group-item" v-if="data.descrizione != undefined"><span v-html="data.descrizione"></span></li>
                                     <li class="list-group-item">Fase del procedimento di pianificazione: {{ data.stato }} / {{ data.data_stato }}</li>
                                 </ul>

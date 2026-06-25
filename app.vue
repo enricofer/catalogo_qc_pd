@@ -108,6 +108,9 @@ useHead({
                       <nav aria-label="Principale">
                         <ul class="navbar-nav" data-element="main-navigation">
                           <li class="nav-item">
+                              <NuxtLink :prefetch="false" class="main-nav-link nav-link text-truncate" to="/"><span>Home</span></NuxtLink>
+                          </li>
+                          <li class="nav-item">
                               <NuxtLink :prefetch="false" class="main-nav-link nav-link text-truncate" to="/catalogo"><span>Catalogo</span></NuxtLink>
                           </li>
                           <li class="nav-item">
@@ -126,7 +129,7 @@ useHead({
                               <NuxtLink :prefetch="false" class="main-nav-link nav-link text-truncate" to="https://urbanistica.comune.padova.it/norme/"><span>Norme</span></NuxtLink>
                           </li>
                           <li class="nav-item">
-                              <NuxtLink :prefetch="false" class="main-nav-link nav-link text-truncate" to="/dbtman/prod/"><span>DBT manager</span></NuxtLink>
+                              <NuxtLink :prefetch="false" class="main-nav-link nav-link text-truncate" to="https://urbanistica.comune.padova.it/dbtman/prod/"><span>DBT manager</span></NuxtLink>
                           </li>
                           <!--
                           <li class="nav-item">

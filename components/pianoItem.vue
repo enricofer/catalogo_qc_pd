@@ -14,9 +14,8 @@ const rootPath = config.app.baseURL
                 <span class="visually-hidden">Dataset:</span><!---->
                 <div class="card-body p-0 my-2">
                     <h3 class="green-title-big t-primary mb-8">
-                    <a class="text-decoration-none" data-element="service-link" :href="rootPath + 'piano/' + item.id_pua + '/'">{{ item.id_pua }}</a><!---->
+                    <a class="text-decoration-none" data-element="service-link" :href="rootPath + 'piano/' + item.id_pua + '/'">{{ item.denominazione }}</a><!---->
                     </h3>
-                    <p class="text-paragraph"> {{ item.denominazione }} </p>
                     <!---->
                 </div>
             </div>

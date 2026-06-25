@@ -6,6 +6,8 @@ const baseAPI = config.public.rapperProxy // see nuxt.config.ts
 
 const { data } = await useFetch(baseAPI + 'qc/dataset/');
 
+console.log(data.value)
+
 const searchTerm = defineModel();
 
 const rootPath = config.app.baseURL

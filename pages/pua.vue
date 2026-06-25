@@ -118,7 +118,7 @@ const found = reactive({
                     </div>
                     <!---->   
 
-                    <PaginazioneControl @click="search" :state="state" :msg="'piani trovati in ordine alfabetico'"></PaginazioneControl>    
+                    <PaginazioneControl @click="search" :state="state" :msg="'piani trovati in ordine cronologico'"></PaginazioneControl>    
                     
                     <div v-for="(pItem, index) in found.items" :key="pItem.id_pua" class="app-card" dataelement="service-link">
                         <pianoItem :dett="pItem"></pianoItem>
